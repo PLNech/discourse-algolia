@@ -17,7 +17,7 @@ export default {
 
     // When Algolia Answers is enabled, use a different endpoint
     let postsSourceFallback = autocomplete.sources.hits(postsIndex, { hitsPerPage: hitsPerPage});
-    let postsSource = !options.algoliaAnswersEnabled? postSourceFallback:
+    let postsSource = !options.algoliaAnswersEnabled ? postsSourceFallback :
       function(query, callback) {
         const data = {
           "query": query,
